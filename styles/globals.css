@@ -18,3 +18,47 @@ body {
   box-sizing: border-box;
   font-size: 1.6rem;
 }
+
+@layer components {
+  .border-red-1 {
+    @apply border border-red-500;
+  }
+
+  .border-teal-1 {
+    @apply border border-teal-500;
+  }
+
+  .boundary {
+    width: min(100%, 1200px);
+    margin-inline: auto;
+    padding-inline: 1.6rem;
+  }
+
+  .bg-hero {
+    background-image: linear-gradient(
+      0.2deg,
+      rgba(40, 173, 222, 1) 4.8%,
+      rgb(27, 76, 224) 85.5%
+    );
+  }
+
+  .clip-path-hero {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 65%);
+  }
+
+  .btn-hero {
+    transition: transform 0.1s;
+  }
+
+  .btn-hero:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-hero:active {
+    transform: translateY(2px);
+  }
+
+  .shoe {
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
