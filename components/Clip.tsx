@@ -6,7 +6,7 @@ type ClipProps = {
 };
 
 const Clip: React.FC<ClipProps> = ({ image, video }) => (
-  <div className="border-red-1 relative w-32 h-28 xs:w-28 xs:h-24 xs-2:w-24 xs-2:h-20 xs-3:w-20 xs-3:h-16 xs-4:w-16 xs-4:max-h-14 overflow-hidden rounded-2xl cursor-pointer group">
+  <div className="border-red-1 relative w-32 h-28 xs:w-28 xs:h-24 xs-2:w-24 xs-2:h-20 xs-3:w-20 xs-3:h-16 xs-4:w-16 xs-4:h-14 overflow-hidden rounded-2xl cursor-pointer group">
     <video
       autoPlay
       muted
