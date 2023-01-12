@@ -13,7 +13,9 @@ const Shoe: React.FC<ShoeProps> = ({
   return (
     <div
       className={`border-red-1  ${
-        popular ? "relative" : "flex flex-col items-center space-y-5"
+        popular
+          ? "relative"
+          : "flex flex-col items-center justify-between space-y-5"
       } rounded-3xl bg-gradient-to-b ${color} ${shadow} hover:scale-[1.03] transition-transform duration-300`}
     >
       <div
