@@ -23,7 +23,7 @@ const Hero = () => {
         </button>
         <div className="max-w-[30rem] xs:max-w-[27rem] xs-2:max-w-[20rem] xs-3:max-w-[17rem] xs-4:max-w-[15rem]">
           <img
-            className=" -rotate-[25deg] hover:rotate-0 shoe"
+            className=" -rotate-[25deg] hover:rotate-0 shoe-transition"
             src="/hero.png"
             alt="A Nike Shoe"
           />

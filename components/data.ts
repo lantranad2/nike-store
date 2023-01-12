@@ -186,5 +186,32 @@ const topRatedShoes: IShoe[] = [
   },
 ];
 
-export type { IShoe };
-export { popularShoes, topRatedShoes };
+interface IDescription {
+  title: string;
+  subtitle: string;
+  text: string;
+  btnText: string;
+  url: string;
+  img: string;
+}
+
+const highLights: IDescription = {
+  title: "HIGHLIGHTS",
+  subtitle: "NIKE AIR WITH LIMITLESS CHOICES",
+  text: "Our Purpose is to move the world forward. We take action by building community, protecting our planet and increasing access to sport.",
+  btnText: "Explore More",
+  url: "https://www.nike.com/launch/t/nocta-hot-step-black-gold",
+  img: "description-highlights.png",
+};
+
+const featured: IDescription = {
+  title: "FEATURED",
+  subtitle: "NIKE SNEAKERS AIR LANCING SHOES",
+  text: "The radiance lives on Nike Sneakers Air Lancing Shoes, the basket ball OG that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+  btnText: "Explore More",
+  url: "https://sneakernews.com/2022/03/21/nike-lebron-2-retro-white-midnight-navy-varsity-crimson-dr0826-100/",
+  img: "/description-featured.png",
+};
+
+export type { IShoe, IDescription };
+export { popularShoes, topRatedShoes, highLights, featured };

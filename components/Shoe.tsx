@@ -69,7 +69,7 @@ const Shoe: React.FC<ShoeProps> = ({
             popular
               ? "-rotate-[35deg] hover:-rotate-[10deg]"
               : "hover:-rotate-[15deg]"
-          } shoe`}
+          } shoe-transition`}
           src={img}
           alt={title}
         />
