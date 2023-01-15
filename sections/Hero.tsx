@@ -18,7 +18,7 @@ const Hero = () => {
             Adapt 2.0 Sneakers
           </span>
         </h1>
-        <button className="bg-gray-200 px-9 py-3 xs-2:px-5 xs-2:py-2 rounded-full text-2xl xs-4:text-xl btn-hero">
+        <button className="bg-gray-200 px-9 py-3 xs-2:px-5 xs-2:py-2 rounded-full text-2xl xs-4:text-xl btn-effect">
           Explore Product
         </button>
         <div className="max-w-[30rem] xs:max-w-[27rem] xs-2:max-w-[20rem] xs-3:max-w-[17rem] xs-4:max-w-[15rem]">

@@ -46,16 +46,24 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 65%);
   }
 
-  .btn-hero {
+  .btn-effect {
     transition: transform 0.1s;
   }
 
-  .btn-hero:hover {
+  .btn-effect:hover {
     transform: translateY(-1px);
   }
 
-  .btn-hero:active {
+  .btn-effect:active {
     transform: translateY(2px);
+  }
+
+  .icon-effect {
+    transition: transform 0.1s;
+  }
+
+  .icon-effect:active {
+    transform: scale(0.9);
   }
 
   .shoe-transition {
