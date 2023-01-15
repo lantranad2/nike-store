@@ -4,6 +4,7 @@ import PopularSales from "../sections/PopularSales";
 import TopRatedSales from "../sections/TopRatedSales";
 import { featured, highLights } from "../components/data";
 import Stories from "../sections/Stories";
+import Footer from "../sections/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Description data={featured} />
         <Stories />
       </main>
+      <Footer />
     </>
   );
 }

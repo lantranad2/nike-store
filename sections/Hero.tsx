@@ -8,7 +8,7 @@ import Clip from "../components/Clip";
 const Hero = () => {
   return (
     <header className="border-teal-1 relative py-28">
-      <div className="absolute inset-0 bg-hero clip-path-hero" />
+      <div className="absolute inset-0 bg-header clip-path-hero" />
       <div className="border-red-1 relative z-10 boundary flex flex-col space-y-10 items-center">
         <h1 className="flex flex-col space-y-3 items-center text-white">
           <span className="text-5xl xs-2:text-[2.8rem] xs-3:text-[2.4rem] xs-4:text-[2.1rem] font-extrabold">

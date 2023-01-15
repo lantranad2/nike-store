@@ -34,7 +34,8 @@ body {
     padding-inline: 1.6rem;
   }
 
-  .bg-hero {
+  .bg-header,
+  .bg-footer {
     background-image: linear-gradient(
       0.2deg,
       rgba(40, 173, 222, 1) 4.8%,
