@@ -17,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ visible }) => {
         visible ? "bg-white/70 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className="border-red-1 boundary flex justify-between items-center py-10">
+      <div className="border-red-1 boundary flex justify-between items-center py-10 pr-[2.475rem]">
         <a className="w-28 inline-block" href="/">
           <img
             className={`${visible && "brightness-[0.25]"}`}

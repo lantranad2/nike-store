@@ -131,7 +131,7 @@ const Footer = () => {
         </div>
         <div className="text-white mt-10 flex flex-col items-center">
           <span>Copyright &copy; 2023</span>
-          <span className="font-semibold">JSSTACK DEVELOPER</span>
+          <span className="font-semibold">JSSTACK DEVELOPERS</span>
         </div>
       </div>
     </footer>
