@@ -1,13 +1,23 @@
 import { IShoe } from "./data";
 import { TrashIcon } from "@heroicons/react/24/outline";
+import { useAppDispatch } from "../state/hooks";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeItem,
+} from "../state/cartSlice";
 
 interface ShoppingItemProps {
   data: IShoe;
+  quantity: number;
 }
 
 const ShoppingItem: React.FC<ShoppingItemProps> = ({
   data: { id, title, subtitle, rating, btnText, img, price, color, shadow },
+  quantity,
 }) => {
+  const dispatch = useAppDispatch();
+
   return (
     <div className="flex">
       <div
@@ -26,22 +36,31 @@ const ShoppingItem: React.FC<ShoppingItemProps> = ({
           {subtitle}
         </span>
         <div className="flex space-x-5 mx-auto mt-2">
-          <button className="bg-gray-700 w-[2.5rem] h-[2.5rem] xs-2:w-[2rem] xs-2:h-[2rem] text-white text-[2rem] font-medium flex justify-center items-center rounded-md btn-effect leading-none">
+          <button
+            className="bg-gray-700 w-[2.5rem] h-[2.5rem] xs-2:w-[2rem] xs-2:h-[2rem] text-white text-[2rem] font-medium flex justify-center items-center rounded-md btn-effect leading-none"
+            onClick={() => dispatch(decreaseQuantity(id))}
+          >
             -
           </button>
           <span className="h-[2.5rem] xs-2:h-[2rem] bg-gray-700 text-white font-medium flex justify-center items-center rounded-md px-5 xs-2:text-[1.4rem] leading-none">
-            1
+            {quantity}
           </span>
-          <button className="bg-gray-700 w-[2.5rem] h-[2.5rem] xs-2:w-[2rem] xs-2:h-[2rem] text-white text-[2rem] font-medium flex justify-center items-center rounded-md btn-effect leading-none">
+          <button
+            className="bg-gray-700 w-[2.5rem] h-[2.5rem] xs-2:w-[2rem] xs-2:h-[2rem] text-white text-[2rem] font-medium flex justify-center items-center rounded-md btn-effect leading-none"
+            onClick={() => dispatch(increaseQuantity(id))}
+          >
             +
           </button>
         </div>
       </div>
       <div className="flex flex-col justify-between items-center ml-auto">
         <span className="text-[1.6rem] xs-2:text-[1.4rem] xs-4:text-[1.2rem] font-medium leading-none">
-          ${price}
+          ${price * quantity}
         </span>
-        <button className="bg-gray-700 text-white flex justify-center items-center rounded-md w-[2.5rem] h-[2.5rem] xs-2:w-[2rem] xs-2:h-[2rem] p-1 btn-effect">
+        <button
+          className="bg-gray-700 text-white flex justify-center items-center rounded-md w-[2.5rem] h-[2.5rem] xs-2:w-[2rem] xs-2:h-[2rem] p-2 btn-effect"
+          onClick={() => dispatch(removeItem(id))}
+        >
           <TrashIcon />
         </button>
       </div>

@@ -1,5 +1,9 @@
+"use client";
+
 import { IShoe } from "./data";
 import { StarIcon, ShoppingBagIcon } from "@heroicons/react/24/solid";
+import { useAppDispatch } from "../state/hooks";
+import { addToCart, openCart } from "../state/cartSlice";
 
 interface ShoeProps {
   shoe: IShoe;
@@ -10,6 +14,24 @@ const Shoe: React.FC<ShoeProps> = ({
   shoe: { id, title, subtitle, rating, btnText, img, price, color, shadow },
   popular,
 }) => {
+  const dispatch = useAppDispatch();
+
+  const handleAdding = () => {
+    dispatch(
+      addToCart({
+        id,
+        title,
+        subtitle,
+        rating,
+        btnText,
+        img,
+        price,
+        color,
+        shadow,
+      })
+    );
+  };
+
   return (
     <div
       className={`border-red-1  ${
@@ -49,10 +71,19 @@ const Shoe: React.FC<ShoeProps> = ({
           </div>
         </div>
         <div className="flex space-x-5 xs:space-x-3">
-          <button className="bg-white w-[2.6rem] xs:w-[2.2rem] xs-2:w-[2.6rem] p-1 rounded-md active:scale-90">
+          <button
+            className="bg-white w-[2.6rem] xs:w-[2.2rem] xs-2:w-[2.6rem] p-1 rounded-md active:scale-90"
+            onClick={handleAdding}
+          >
             <ShoppingBagIcon className="text-gray-700" />
           </button>
-          <button className="bg-white text-[1.4rem] xs:text-[1.3rem] xs-2:text-[1.4rem] px-2 py-1 rounded-lg active:scale-90 transition-transform duration-150">
+          <button
+            className="bg-white text-[1.4rem] xs:text-[1.3rem] xs-2:text-[1.4rem] px-2 py-1 rounded-lg active:scale-90 transition-transform duration-150"
+            onClick={() => {
+              handleAdding();
+              dispatch(openCart());
+            }}
+          >
             {btnText}
           </button>
         </div>

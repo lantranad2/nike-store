@@ -5,12 +5,22 @@ import {
   HeartIcon,
   ShoppingBagIcon,
 } from "@heroicons/react/24/outline";
+import { useEffect } from "react";
+import { cartItems, loadCart, openCart } from "../state/cartSlice";
+import { useAppDispatch, useAppSelector } from "../state/hooks";
 
 interface NavbarProps {
   visible: boolean;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ visible }) => {
+  const dispatch = useAppDispatch();
+  const items = useAppSelector(cartItems);
+
+  useEffect(() => {
+    dispatch(loadCart());
+  }, []);
+
   return (
     <nav
       className={`border-teal-1 fixed left-0 top-0 right-0 z-20 transition-[background] duration-150 ${
@@ -32,7 +42,10 @@ const Navbar: React.FC<NavbarProps> = ({ visible }) => {
           <HeartIcon
             className={`w-9 cursor-pointer ${!visible && "text-white"}`}
           />
-          <div className="relative cursor-pointer">
+          <div
+            className="relative cursor-pointer icon-effect"
+            onClick={() => dispatch(openCart())}
+          >
             <ShoppingBagIcon className={`w-9 ${!visible && "text-white"}`} />
             <span
               className={`absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-7 h-7 rounded-full text-[1.2rem] leading-none flex justify-center items-center shadow-sm ${
@@ -41,7 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ visible }) => {
                   : "bg-white shadow-white"
               }`}
             >
-              0
+              {items.reduce((quantity, item) => quantity + item.quantity, 0)}
             </span>
           </div>
         </div>

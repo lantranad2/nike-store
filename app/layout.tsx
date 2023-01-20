@@ -1,5 +1,7 @@
 import "../styles/globals.css";
-import { Poppins, Inter } from "@next/font/google";
+import { Poppins } from "@next/font/google";
+import Provider from "./provider";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -16,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className={`${poppins.variable} font-sans text-gray-700`}>
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
