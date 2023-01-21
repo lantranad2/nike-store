@@ -8,6 +8,7 @@ import Youtube from "../public/youtube.svg";
 import Clip from "../components/Clip";
 import Navbar from "./Navbar";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const Header = () => {
   const { ref, inView } = useInView({ threshold: 1 });
@@ -68,9 +69,15 @@ const Header = () => {
             </a>
           </div>
           <div className="absolute top-1/2 left-[1.6rem] -translate-y-1/2 flex flex-col space-y-3">
-            <Clip image="/vcover1.png" video="/clip.mp4" />
-            <Clip image="/vcover2.png" video="/clip.mp4" />
-            <Clip image="/vcover3.png" video="/clip.mp4" />
+            <Link href="/video/clip_1.mp4" target="_blank">
+              <Clip image="/vcover1.png" video="/clip_1.mp4" />
+            </Link>
+            <Link href="/video/clip_2.mp4" target="_blank">
+              <Clip image="/vcover2.png" video="/clip_2.mp4" />
+            </Link>
+            <Link href="/video/clip_3.mp4" target="_blank">
+              <Clip image="/vcover3.png" video="/clip_3.mp4" />
+            </Link>
           </div>
         </div>
       </header>
