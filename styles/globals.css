@@ -22,13 +22,13 @@ body {
 }
 
 @layer components {
-  .border-red-1 {
+  /* .border-red-1 {
     @apply border border-red-500;
   }
 
   .border-teal-1 {
     @apply border border-teal-500;
-  }
+  } */
 
   .boundary {
     width: min(100%, 1200px);
